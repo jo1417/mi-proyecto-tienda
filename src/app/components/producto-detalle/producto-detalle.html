@@ -1,0 +1,58 @@
+<div class="detalle-container" *ngIf="producto">
+
+
+<!-- SECCIÓN IMAGEN + MINIATURAS -->
+<div class="detalle-galeria">
+
+<!-- Miniaturas verticales -->
+<div class="miniaturas-vertical">
+        
+      <img *ngFor="let img of producto.imagenes"
+          [src]="img"
+          (click)="producto.imagenActiva = img"
+          [class.activa]="img === producto.imagenActiva">
+    </div>
+
+   <!-- Imagen principal -->
+    <div class="imagen-principal">
+      <img [src]="producto.imagenActiva || producto.imagen"
+      alt="{{ producto.nombre }}">
+    </div>
+
+  </div>
+
+  <!-- INFORMACIÓN -->
+  <div class="detalle-info">
+
+    <h1>{{ producto.nombre }}</h1>
+
+    <p>{{producto.texto}}</p>
+
+    <div class="precios">
+      <p *ngIf="producto.oferta" class="precio-tachado">
+        {{ producto.precio | currency:'COP':'symbol':'1.0-0' }}
+      </p>
+
+      <p class="precio-final">
+        {{ precioFinal(producto) | currency:'COP':'symbol':'1.0-0' }}
+      </p>
+
+      <span *ngIf="producto.oferta" class="descuento">
+        -{{ producto.descuento }}%
+      </span>
+    </div>
+
+    <p class="descripcion">
+      {{ producto.descripcion }}
+    </p>
+
+    <a [href]="obtenerLinkWhatsApp(producto)"
+       target="_blank"
+       class="btn-whatsapp">
+       Comprar por WhatsApp
+    </a>
+
+  </div>
+
+</div>
+

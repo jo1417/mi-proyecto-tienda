@@ -1,0 +1,117 @@
+
+/* Barra fija debajo del navbar principal */
+
+.promo-bar-superior-segundo {
+display: flex;          
+position: fixed;         
+top: 50px;               
+width: 100%;            
+height: 50px;           
+align-items: center;     
+z-index: 1000;     
+background-image: url(/assets/img/smooth-surface-with-light.jpg);
+border-bottom: 2.5px solid rgba(255, 255, 255, 0.87);            
+}
+
+/* Espacio donde se encuentra el texto y el botón */
+
+.promo-contenido {
+display: flex;         
+align-items: center;    
+gap: 15px;              
+padding-left: 30px;     
+color: #f8f5f5;          
+width: 100%;
+}
+
+/* Texto principal antes del botón */
+
+.promo-contenido h4 {
+font-size: 14px;         
+font-weight: 600;        
+}
+
+.texto {
+margin-left: 0;
+color: rgb(247, 242, 242);
+font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Botón de pide ya tu credito */
+
+.promo-contenido a {
+
+background: #dd0707;     
+color: rgb(252, 249, 249); 
+padding: 7px 12px;       
+border-radius: 6px;      
+font-size: 15px;         
+text-decoration: none;   
+}
+
+/* Efecto que hace al pasar el mouse por el botón */
+
+.promo-contenido a:hover {
+background-color: #474194; /* oscurezco un poco el botón */
+}
+
+
+/* Estilos para pantallas pequeñas (móviles) responsive */
+
+@media(max-width:780px){
+
+.promo-bar-superior-segundo {    
+height: 60px;   /* reduzco un poco la altura en móviles */
+font-size: 17px;
+}
+
+.promo-contenido a {
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+height: 34px;
+width: 150px;
+padding: 1px 1px;       /* reduzco el espacio interno en móviles */
+font-size: 16px;         /* reduzco el tamaño del texto en móviles */
+}
+
+.promo-contenido h4 {
+font-size: 13px;         /* reduzco el tamaño del texto en móviles */
+}
+
+.texto p{
+display: none;
+}
+
+}
+
+@media(max-width:480px){
+
+.promo-bar-superior-segundo {    
+height: 60px;   /* reduzco un poco la altura en móviles */
+font-size: 17px;
+}
+
+.promo-contenido a {
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+height: 34px;
+width: 150px;
+padding: 1px 1px;       /* reduzco el espacio interno en móviles */
+font-size: 16px;         /* reduzco el tamaño del texto en móviles */
+}
+
+.promo-contenido h4 {
+font-size: 13px;         /* reduzco el tamaño del texto en móviles */
+}
+
+.texto p{
+display: none;
+}
+
+}
+

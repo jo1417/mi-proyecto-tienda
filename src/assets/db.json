@@ -1,0 +1,136 @@
+{
+
+   "carrusel": [
+    {
+      "id": 1,
+      "img": "/assets/img/armarionegroo.png"
+    },
+    {
+      "id": 2,
+      "img": "/assets/img/pagi.png"
+    }
+  ],
+
+  "productos": [
+
+    {
+      "id": 1,
+      "nombre": "Colchón dreams semiortopedico resortado",
+      "descripcion" : " medidas: 1.40, 1.20, 1.00 ",
+      "texto": "3 años de garantia",
+      "categoria": "colchon",
+      "precio": 700000,
+      "oferta": false,
+      "descuento": 10,
+      "tipo": "contado",
+      "imagen": "/assets/img/colchonsemiortopedicogris1.jpeg",
+      "imagenes": [
+        "/assets/img/colchonsemiortopedicogris1.jpeg",
+        "/assets/img/colchonsemiortopedicogris2.jpeg"
+      ],
+      "color": "gris"
+    },
+    {
+      "id": 2,
+      "nombre": "armario color madera",
+      "categoria": "armario",
+      "precio": 1500000,
+      "tipo": "contado",
+     "imagen": "",
+     "imagenes":[
+      "/assets/img/armariomadera.png",
+      "/assets/img/armariomaderaabierto.jpeg"
+     ],
+      "color": "madera"
+    },
+    {
+      "id": 3,
+      "nombre": "cama de lujo trenzado",
+      "categoria": "lujo",
+      "precio": 1500000,
+      "oferta": false,
+      "descuento": 15,
+      "tipo": "contado",
+     "imagen": "/assets/img/camalujoInicio.jpeg",
+      "color": "beige"
+    },
+    {
+      "id": 4,
+      "nombre": "peinador pie de reina",
+      "categoria": "peinador",
+      "precio": 600000,
+      "tipo": "contado",
+      "imagen": "/assets/img/peinadorpiedereina.jpeg",
+      "color": "blanco"
+    },
+
+     {
+      "id": 5,
+      "nombre": "Cama de lujo espejo",
+      "categoria": "lujo",
+      "precio": 1200000,
+      "oferta": false,
+      "descuento": 10,
+      "tipo": "contado",
+      "imagen": "/assets/img/camalujoespejonegro1.jpeg",
+      "color": "negro"
+    },
+     {
+      "id": 6,
+      "nombre": "sala bar de lujo",
+      "categoria": "sala",
+      "precio": 1900000,
+      "oferta": true,
+      "descuento": 10,
+      "tipo": "contado",
+      "imagen": "/assets/img/salalujobargris.jpeg",
+      "color": "gris"
+    },
+
+     {
+      "id": 7,
+      "nombre": "peinador hollywood",
+      "categoria": "peinador",
+      "precio": 700000,
+      "oferta": true,
+      "descuento": 10,
+      "tipo": "contado",
+      "imagen": "/assets/img/peinadorhollywoodblanco1.jpeg",
+      "color": "blanco"
+    },
+
+     {
+      "id": 8,
+      "nombre": "Colchón confort semiortopedico resortado",
+      "descripcion":"medidas 1.40, 1.20, 1.00",
+      "categoria": "colchon",
+      "precio": 700000,
+      "oferta": false,
+      "descuento": 10,
+      "tipo": "contado",
+      "imagen": "/assets/img/colchonconfort1.jpeg",
+      "imagenes": [
+        "/assets/img/colchonconfort1.jpeg",
+        "/assets/img/colchonconfort2.jpeg",
+        "/assets/img/colchonconfort3.jpeg",
+        "/assets/img/colchonconfort4.jpeg"
+    ]
+      ,
+      "color": "gris"
+    }
+
+
+
+
+
+ 
+  ]
+
+  
+
+ 
+}
+
+     
+  
+

@@ -1,0 +1,84 @@
+<div class="principal">
+  <h2>Productos</h2>
+
+  <!--  Filtros  -->
+  <div class="filtros">
+    <button routerLink="/" class="btn-home">← Inicio</button>
+    <button (click)="filtrar('todos', colorActual)" [class.activo]="tipoActual==='todos'">Todos</button>
+    <button (click)="filtrar('contado', colorActual)" [class.activo]="tipoActual==='contado'">Contado</button>
+    <button (click)="filtrar('credito', colorActual)" [class.activo]="tipoActual==='credito'">Crédito</button>
+    <button (click)="filtrar(tipoActual, 'todos')" [class.activo]="colorActual==='todos'">Todos los colores</button>
+    <button *ngFor="let c of colores" (click)="filtrar(tipoActual, c)" [class.activo]="colorActual===c">{{ c }}</button>
+  </div>
+
+  <!-- PRoductos filtrados -->
+  <ng-container *ngIf="productosFiltrados$ | async as productosFiltrados; else cargando">
+    <p *ngIf="productosFiltrados.length===0">No hay productos para esta categoría/tipo/color</p>
+
+    <div class="grid" *ngIf="productosFiltrados.length>0">
+      <div class="card" *ngFor="let p of productosFiltrados; trackBy: productosId" >
+
+        <!-- imagen principal -->
+        <div class="imagen-principal-contenedor">
+          <img [src]="p.imagenActiva" alt="{{ p.nombre }}" class="imagen-principal" (click)="verDetalle(p.id)" >
+        </div>
+
+        <h6>Disponible en el color de tu preferencia.</h6>
+
+        <!-- MINIATURAS -->
+        <div class="miniaturas" *ngIf="p.imagenes && p.imagenes.length > 0" (click)="verDetalle(p.id)">
+          <img *ngFor="let img of p.imagenes"
+            [src]="img"
+            (click)="cambiarImagen(p, img)"
+            [class.activa]="img === p.imagenActiva"
+            alt="{{ p.nombre }}">
+        </div>
+
+        <!-- Nombre -->
+        <h3>{{ p.nombre }}</h3>
+
+
+        <!-- Precio original -->
+        <p *ngIf="p.oferta" class="tachado">{{ p.precio | currency:'COP' }}</p>
+
+        <!-- Precio final -->
+        <p class="precio-final">{{ precioFinal(p) | currency:'COP' }}</p>
+
+        <!-- Créditos (solo si tipo crédito) -->
+        <div *ngIf="p.tipo==='credito'">
+          <p>Inicial: {{ p.inicial | currency:'COP' }}</p>
+          <p>Cuota quincenal: {{ p.cuotaQuincenal | currency:'COP' }}</p>
+          <p *ngIf="p.cuotasMensuales">Cuotas mensuales: {{ p.cuotasMensuales }}</p>
+        </div>
+
+        <!-- Tipo -->
+        <span>{{ p.tipo }}</span>
+
+        <!-- Descuento -->
+        <span *ngIf="p.oferta" class="descuento">-{{ p.descuento }}%</span>
+
+        <!-- Boton ver dettalle -->
+        <button (click)="verDetalle(p.id)" class="btn-detalle">Ver Detalle</button>
+
+        <!-- Boton Whatsapp -->
+        <a [href]="obtenerLinkWhatsApp(p)" target="_blank" class="btn-whatsapp">Comprar por WhatsApp</a>
+
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #cargando>
+    <p>Cargando productos...</p>
+  </ng-template>
+
+</div>
+
+
+
+
+
+
+
+
+
+

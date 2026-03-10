@@ -1,0 +1,45 @@
+<div class="carrucel-general">
+
+  <!-- Carrusel izquierdo -->
+  <div class="carousel-contenedor">
+  
+  <div class="carousel-inicio" *ngIf="imagenesIzq.length > 0">
+    <img 
+      [src]="imagenesIzq[posicionActual]?.img" 
+      class="carousel-imagen"
+      alt="promo"
+      >
+  </div>
+    <button class="nav-carrucel anterior" (click)="anterior()">‹</button>
+    <button class="nav-carrucel siguiente" (click)="siguiente()">›</button>
+  </div>
+
+  <!-- Links de categoria -->
+  <div class="links-carrucel">
+    <a *ngFor="let link of links" [routerLink]="link.ruta">
+      <div class="link-tarjeta">
+        <img [src]="link.img" alt="{{ link.nombre }}">
+        <span>{{ link.nombre }}</span>
+      </div>
+    </a>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

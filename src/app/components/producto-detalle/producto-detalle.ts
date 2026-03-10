@@ -1,0 +1,40 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { ProductosService } from '../../services/producto.service';
+import { RouterModule } from '@angular/router';
+
+@Component({
+  selector: 'app-producto-detalle',
+  imports: [ CommonModule, RouterModule],
+  templateUrl: './producto-detalle.html',
+  styleUrl: './producto-detalle.css',
+})
+
+export class ProductoDetalleComponent implements OnInit {
+
+producto: any;
+
+constructor(
+private route: ActivatedRoute,
+private productosService: ProductosService
+) { }
+
+ngOnInit(): void {
+  const id = +this.route.snapshot.paramMap.get('id')!; // obtenemos el id de la URL
+    this.productosService.getProductos().subscribe(res => {
+    this.producto = res.find(p => p.id == id); // buscamos el producto
+});
+}
+
+
+precioFinal(p: any): number {
+  return p.oferta ? p.precio - (p.precio * p.descuento / 100) : p.precio;
+}
+
+obtenerLinkWhatsApp(p: any): string {
+  const mensaje = `Hola! Estoy interesado en el producto ${p.nombre} con precio ${this.precioFinal(p)}`;
+    return `https://wa.me/573001234567?text=${encodeURIComponent(mensaje)}`;
+}
+
+}

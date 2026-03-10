@@ -1,0 +1,35 @@
+<section class="credito-card">
+
+  <h2>
+    <i class="bx bx-credit-card"></i>
+      Requisitos para solicitar crédito
+  </h2>
+
+  <ul>
+  <li *ngFor="let r of requisitos">
+    <i [class]="r.icono"></i>
+      <div class="info">
+        <strong>{{ r.titulo }}</strong>
+        <span>{{ r.descripcion }}</span>
+      </div>
+  </li>
+  </ul>
+
+  <div class="cta">
+    <i class="bx bx-message-dots"></i>
+      <span>Si ya tienes todo listo, escríbenos y te ayudamos a gestionar tu solicitud</span>
+  </div>
+
+
+  <a
+    class="btn-credito"
+    [routerLink]="['/productoss']"
+    [queryParams]="{ tipo: 'credito' }"
+  >
+  <i class="bx bx-credito-card"></i>
+      Ver productos a crédito
+  </a>
+
+</section>
+
+

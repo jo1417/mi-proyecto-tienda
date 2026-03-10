@@ -1,0 +1,64 @@
+/* Estilos generales del footer */
+.footer {
+background-color: #111;      
+color: #fff;                
+padding: 40px 20px 20px;     
+font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal del footer */
+.footer-contenedor {
+display: flex;               
+flex-wrap: wrap;             
+justify-content: space-between; 
+gap: 20px;                  
+max-width: 1200px;          
+margin: auto;                
+}
+
+/* Cada sección del footer */
+.footer-section {
+flex: 1 1 200px;             
+}
+
+/* Títulos del footer */
+.footer-section h3,
+.footer-section h4 {
+margin-bottom: 10px;         
+color: #f5b301;             
+}
+
+/* Texto y listas del footer */
+.footer-section p,
+.footer-section li {
+font-size: 14px;            
+line-height: 1.6; 
+}          
+
+/* Lista de enlaces */
+.footer-section ul {
+list-style: none;             
+padding: 0;
+}
+
+/* Enlaces del footer */
+.footer-section ul li a {
+color: #ccc;                  
+text-decoration: none;       
+transition: color 0.3s;      
+}
+
+/* Hover de los enlaces */
+.footer-section ul li a:hover {
+color: #f5b301;              
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+text-align: center;          
+border-top: 1px solid #333; 
+margin-top: 20px;             
+padding-top: 10px;          
+font-size: 13px;           
+color: #aaa;                 
+}

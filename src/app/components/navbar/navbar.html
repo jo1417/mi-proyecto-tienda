@@ -1,0 +1,80 @@
+<header class="header">
+<div class="nav-container">
+
+    <button class="menu-btn" (click)="toggleSidebar()">
+      <i class="bx bx-menu"></i>
+    </button>
+      <span class="logo">DormiCoR</span>
+
+    <nav class="nav">
+      <a routerLink="/">
+        <i  class='bx bx-home-alt'>Inicio</i>
+      </a>
+
+      <a href="https://www.whatsapp.com" target="_blank">
+        <i class='bx bxl-whatsapp'></i> 
+      </a>
+
+      <a href="https://www.instagram.com" target="_blank" class="btn-instagram">
+        <i class='bx bxl-instagram'></i>
+      </a>
+    
+      <a href="https://www.facebook.com" target="_blank" class="btn-facebook">
+      <i class='bx bxl-facebook'></i>
+      </a>
+    </nav>
+</div>
+</header>
+
+<!-- Sidebar -->
+<aside class="barraLateral" [class.cerrada]="!sidebarOpen">
+  <nav>
+    <a routerLink="/home" routerLinkActive="seleccionado" class="home">
+      <img src="assets/img/home.svg">
+      <span>Inicio</span>
+    </a>
+
+    <a routerLink="" routerLinkActive="seleccionado">
+      <img src="assets/img/file.svg">
+      <span>sistecredito</span>
+    </a>
+
+    <a routerLink="" routerLinkActive="seleccionado">
+      <img src="assets/img/wallet.svg">
+      <span>addi</span>
+    </a>
+  </nav>
+</aside>
+
+
+<div class="bottom-bar">
+
+    <!-- Botón izquierdo -->
+
+  <div class="floating-btn left">
+      <a routerLink="/" routerLinkActive="activo" class="nav-link">
+      <i class='bx bx-home'></i>
+      </a>
+  
+      <a routerLink="/productoss" routerLinkActive="activo" class="nav-link">
+        <i class='bx bx-store'></i> 
+      </a>
+  </div>
+
+  <div class="buscador">
+      <div class="left-icon">
+        <i class="bx bx-search"></i>
+      </div>
+
+<input type="text"
+        placeholder="Buscar productos..."
+        (input)="buscar($any($event.target).value)">
+
+    <div class="right-icon">
+      <i class="icon-mic"></i>
+    </div>
+  </div>
+</div>
+
+
+
