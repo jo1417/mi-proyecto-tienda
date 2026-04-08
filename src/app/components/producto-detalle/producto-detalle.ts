@@ -21,12 +21,23 @@ private productosService: ProductosService
 ) { }
 
 ngOnInit(): void {
-  const id = +this.route.snapshot.paramMap.get('id')!; // obtenemos el id de la URL
-    this.productosService.getProductos().subscribe(res => {
-    this.producto = res.find(p => p.id == id); // buscamos el producto
-});
+  const id = +this.route.snapshot.paramMap.get('id')!;
+
+  this.productosService.getProductos().subscribe(res => {
+    const encontrado = res.find(p => p.id == id);
+
+    if (encontrado) {
+      this.producto = {
+        ...encontrado,
+        imagenActiva: encontrado.imagenes?.[0] || encontrado.imagen
+      };
+    }
+  });
 }
 
+cambiarImagen(p: any, img: string) {
+  p.imagenActiva = img;
+}
 
 precioFinal(p: any): number {
   return p.oferta ? p.precio - (p.precio * p.descuento / 100) : p.precio;

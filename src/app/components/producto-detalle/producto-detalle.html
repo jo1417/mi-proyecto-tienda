@@ -7,9 +7,9 @@
 <!-- Miniaturas verticales -->
 <div class="miniaturas-vertical">
         
-      <img *ngFor="let img of producto.imagenes"
+      <img *ngFor="let img of producto.imagenes  || []"
           [src]="img"
-          (click)="producto.imagenActiva = img"
+          (click)="cambiarImagen(producto, img)"
           [class.activa]="img === producto.imagenActiva">
     </div>
 

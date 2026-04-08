@@ -41,6 +41,11 @@ private router: Router
 ngOnInit(): void {
 this.slug = this.route.snapshot.paramMap.get('slug');
 
+ this.route.queryParams.subscribe(params => {
+      const tipo = params['tipo'];
+      if (tipo) this.filtrar(tipo, 'todos');
+    });
+
 this.productosService.getProductos().subscribe({
 next: data => {
 
@@ -51,15 +56,12 @@ this.productos = data.map(p => ({
 imagenActiva: p.imagenes && p.imagenes.length ? p.imagenes[0] : p.imagen // inicializo imagen principal
 }));
 
-// aplicar filtros por queryParams
-this.route.queryParams.subscribe(params => {
-  const tipo = params['tipo'];
-    if (tipo) this.filtrar(tipo, 'todos');
-        
-});
+
 
 // obtener colores únicos
-this.colores = Array.from(new Set(this.productos.map(p => p.color))).filter(c => c);
+this.colores = Array.from(
+  new Set(this.productos.map(p => p.color))
+).filter(c => c);
 
 // observable de productos filtrados
 this.productosFiltrados$ = combineLatest([
@@ -108,7 +110,9 @@ p.imagenActiva = img;
 }
 
 precioFinal(p: any): number {
- return p.oferta ? p.precio - (p.precio * p.descuento / 100) : p.precio;
+ return p.oferta 
+ ? p.precio - (p.precio * p.descuento / 100)
+  : p.precio;
 }
 
 obtenerLinkWhatsApp(p: any): string {
@@ -125,7 +129,7 @@ this.router.navigate(['/productos', id]);
   productosId(_index: number, item: any): number {
     return item.id;
   }
-}
+} 
 
 
 
