@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 
 export class Barrapublicidad{
 
-promos =[
+promos = [
     {
       titulo: '¿ Necesitas Financiamiento? ',
       descripcion: 'pide ya tu credito',

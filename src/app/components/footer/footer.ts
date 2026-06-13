@@ -13,4 +13,12 @@ styleUrl: './footer.css',
 
 export class Footer {
 
+    footers = [
+        {
+           descripcion: 'Desarrollo web • Tecnología • Creatividad',
+              email: 'contacto@misitio.com',
+              telefono: '+57 304 663 7509',
+                texto: '© 2026 MiSitio. Todos los derechos reservados.'
+        }
+    ];
 }

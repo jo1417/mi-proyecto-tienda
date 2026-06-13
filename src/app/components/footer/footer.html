@@ -1,5 +1,5 @@
 <!-- Footer principal del sitio -->
-<footer class="footer">
+<footer class="footer" *ngFor="let footer of footers">
 
   <!-- Contenedor general del footer -->
   <div class="footer-contenedor">
@@ -7,7 +7,7 @@
     <!-- Sección de información del sitio -->
     <div class="footer-section">
       <h3>dormiCoR</h3>
-      <p>Desarrollo web • Tecnología • Creatividad</p>
+      <p>{{ footer.descripcion }}</p>
     </div>
 
     <!-- Sección de enlaces de navegación -->
@@ -21,15 +21,15 @@
     <!-- Sección de información de contacto -->
     <div class="footer-section">
       <h4>Contacto</h4>
-      <p>Email: contacto@misitio.com</p>
-      <p>Tel: +57 304 663 7509</p>
+      <p>{{ footer.email }}</p>
+      <p>{{ footer.telefono }}</p>
     </div>
 
   </div>
 
   <!-- Parte inferior del footer -->
   <div class="footer-bottom">
-    <p>© 2026 MiSitio. Todos los derechos reservados.</p>
+    <p>{{ footer.texto }}</p>
   </div>
 
 </footer>
