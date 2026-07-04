@@ -35,22 +35,29 @@ export class ProductosService {
   // Si estamos usando Firebase
   return new Observable<any[]>(observer => {
 
-    getDocs(collection(db, 'productos'))
-      .then(snapshot => {
+  getDocs(collection(db, 'productos'))
+    .then(snapshot => {
 
-        const productos = snapshot.docs.map(doc => doc.data());
+      console.log("Documentos encontrados:", snapshot.size);
 
-        this.cache = productos;
+      const productos = snapshot.docs.map(doc => ({
+        ...doc.data()
+      }));
 
-        observer.next(productos);
-        observer.complete();
+      console.log(productos);
 
-      })
-      .catch(error => observer.error(error));
+      this.cache = productos;
 
-  });
+      observer.next(productos);
+      observer.complete();
+
+    })
+    .catch(error => {
+      console.error("Error Firebase:", error);
+      observer.error(error);
+    });
+
+});
 
 }
-
-
 }
