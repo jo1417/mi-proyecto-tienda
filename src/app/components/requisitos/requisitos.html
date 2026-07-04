@@ -6,11 +6,11 @@
   </h2>
 
   <ul>
-  <li *ngFor="let r of requisitos">
-    <i [class]="r.icono"></i>
+  <li *ngFor="let requisito of requisitos">
+    <i [class]="requisito.icono"></i>
       <div class="info">
-        <strong>{{ r.titulo }}</strong>
-        <span>{{ r.descripcion }}</span>
+        <strong>{{ requisito.titulo }}</strong>
+        <span>{{ requisito.descripcion }}</span>
       </div>
   </li>
   </ul>
