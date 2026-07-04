@@ -1,3 +1,3 @@
 export const DataSource = {
-  firebase: false
+  firebase: true
 };
