@@ -22,13 +22,12 @@ backdrop-filter: blur(18px);
 border-bottom: 3px solid rgb(247, 244, 244);
 }
 
-.nav-container {
+  .nav-container{
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 0 10px;
+    padding: 0 8px;
     overflow: hidden;
 }
 
@@ -75,14 +74,11 @@ border: rgb(250, 247, 246) 2px solid;
 }
 
 /* Nav bar */
-.nav {
-margin-left: auto;
-margin-right: 0;
-display: flex;
-margin-top: 2px;
-align-items: center;
-justify-content: center;
-
+.nav{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .nav a {
@@ -286,11 +282,35 @@ height: 60px;
 
 }
 
+/* Logo más pequeño */
+.logo{
+    font-size: 22px;
+}
+
+/* Menú más pequeño */
+.menu-btn{
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+/* Reducir tamaño de los iconos */
 .bx-home-alt,
 .bxl-instagram,
 .bxl-whatsapp,
 .bxl-facebook{
     padding: .6rem;
+    font-size: 20px;
+}
+
+/* Solo mostrar Inicio e Instagram */
+.bxl-whatsapp,
+.bxl-facebook{
+    display: none;
+}
+
+.bxl-instagram,
+.bx-home-alt{
+    display: flex;
 }
 
 .search-pill{
