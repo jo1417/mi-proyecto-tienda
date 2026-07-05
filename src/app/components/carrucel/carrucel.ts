@@ -33,26 +33,29 @@ export class Carrucel implements OnInit {
     private cd: ChangeDetectorRef
   ) {}
 
-  ngOnInit(): void {
+ngOnInit(): void {
 
-    this.carrucelService.getCarrusel().subscribe({
+  console.time("Carrucel");
 
-      next: (data) => {
+  this.carrucelService.getCarrusel().subscribe({
 
-        this.imagenesIzq = data;
-        this.posicionActual = 0;
+    next: (data) => {
 
-        this.cd.detectChanges();
+      console.timeEnd("Carrucel");
+      console.log(data);
 
-      },
+      this.imagenesIzq = data;
+      this.posicionActual = 0;
 
-      error: (err) => {
-        console.error('Error cargando carrusel:', err);
-      }
+      this.cd.detectChanges();
 
-    });
+    },
 
-  }
+    error: (err) => console.error(err)
+
+  });
+
+}
 
   siguiente() {
     if (this.imagenesIzq.length === 0) return;
