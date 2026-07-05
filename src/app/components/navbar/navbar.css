@@ -126,11 +126,11 @@ height: 60px;
 display: flex;
 align-items: center;
 justify-content: center;
-background: rgba(255, 255, 255, 0.212);
+background: rgba(255, 255, 255, 0.345);
 backdrop-filter: blur(16px);
 -webkit-backdrop-filter: blur(16px);
 box-shadow: 10px 8px 30px rgba(0, 0, 0, 0.788);
-color: #fff;
+color: #f8f2f2;
 border: rgb(99, 98, 98) 2px solid;
 border-radius: 2rem;
 cursor: pointer;
@@ -175,6 +175,7 @@ border-radius: 2rem;
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.87);
+
 }
 
 /* Input del buscador */
@@ -203,6 +204,7 @@ background: rgb(13, 14, 13);
 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.87);
 color: #111111;
 cursor: pointer;
+
 }
 
 .bx-search{
@@ -271,6 +273,28 @@ height: 52px;
 
 @media (max-width: 480px) {
 
+  .buscador {
+    width: 70%;
+  }
+
+  
+.floating-btn {
+width: 100px;
+height: 60px;
+
+
+}
+
+.bx-store{
+padding: 0.5rem;
+
+}
+
+.bx-home{
+padding: 0.8rem;
+
+}
+
 .bx-home{
 display: flex;
 }
@@ -287,6 +311,6 @@ display: none;
 }
 
 .search-pill{
-width: 70%;
+width: 80%;
 }
 }
