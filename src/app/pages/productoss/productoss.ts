@@ -46,17 +46,22 @@ this.slug = this.route.snapshot.paramMap.get('slug');
       if (tipo) this.filtrar(tipo, 'todos');
     });
 
+console.log("Pidiendo productos...");
+
 this.productosService.getProductos().subscribe({
-next: data => {
+  next: data => {
 
-// guardo productos
-this.productos = data.map(p => ({
-...p,
+    console.log("Productos recibidos:", data);
 
-imagenActiva: p.imagenes && p.imagenes.length ? p.imagenes[0] : p.imagen // inicializo imagen principal
-}));
+    // guardo productos
+    this.productos = data.map(p => ({
+      ...p,
+      imagenActiva: p.imagenes && p.imagenes.length
+        ? p.imagenes[0]
+        : p.imagen
+    }));
 
-
+    console.log("Productos procesados:", this.productos);
 
 // obtener colores únicos
 this.colores = Array.from(
