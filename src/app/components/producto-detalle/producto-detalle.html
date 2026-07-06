@@ -9,6 +9,7 @@
         
       <img *ngFor="let img of producto.imagenes  || []"
           [src]="img"
+          loading="lazy"
           (click)="cambiarImagen(producto, img)"
           [class.activa]="img === producto.imagenActiva">
     </div>
@@ -16,6 +17,7 @@
    <!-- Imagen principal -->
     <div class="imagen-principal">
       <img [src]="producto.imagenActiva || producto.imagen"
+      loading="lazy"
       alt="{{ producto.nombre }}">
     </div>
 
