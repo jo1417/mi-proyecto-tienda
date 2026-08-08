@@ -34,10 +34,12 @@ border-bottom: 3px solid rgb(247, 244, 244);
 .logo {
 font-size: 24px;
 font-weight: bold;
+cursor: pointer;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: #e53935;
-}
 
+
+}
 .menu-btn {
 display: flex;
 font-size: 36px;

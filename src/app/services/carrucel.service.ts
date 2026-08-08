@@ -5,6 +5,7 @@ import { Observable, of, tap } from 'rxjs';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { DataSource } from '../config/data-source';
+import { addDoc } from 'firebase/firestore';
 
 export interface Imagen {
   id: number;
@@ -15,6 +16,25 @@ export interface Imagen {
   providedIn: 'root'
 })
 export class CarrucelService {
+
+
+  async agregarCarrucel( 
+    id: number,
+    img: string) {
+  
+   const carrucelRef = collection(db, 'carrucel');
+  
+   await addDoc(carrucelRef, {
+      id,
+      img
+    });
+  
+    alert('Producto guardado');
+  
+  }
+
+   
+    
 
   private baseUrl = 'http://localhost:3000';
   private cache: Imagen[] | null = null;

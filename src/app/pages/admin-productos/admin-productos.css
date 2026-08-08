@@ -1,0 +1,67 @@
+.admin-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 90%;
+  max-width: 700px;
+
+  margin: 4rem auto;
+  padding: 2rem;
+
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  border: 1px solid #0b0b0b;
+  box-sizing: border-box;
+}
+
+.h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+input[type="text"],
+input[type="number"] {
+  width: 500px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  border: 2px solid #110f0f;
+}
+
+th,
+td {
+   border: 2px solid #110f0f;
+  text-align: left;
+  padding: 5px 8px;
+}
+
+button {
+ 
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
