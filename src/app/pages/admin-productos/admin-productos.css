@@ -1,67 +1,99 @@
 .admin-productos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 90%;
-  max-width: 700px;
-
-  margin: 4rem auto;
-  padding: 2rem;
-
-  border-radius: 12px;
-  background-color: #f9f9f9;
-  border: 1px solid #0b0b0b;
+  width: 600px;
+ margin: 4rem auto;
+  padding: 15px;
   box-sizing: border-box;
+  background: #eee;
+  border: 1px solid #000;
+  border-radius: 10px;
 }
 
-.h1 {
-  width: 100%;
+/* Títulos */
+.admin-productos h1,
+.admin-productos h2 {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.h2 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
+  margin: 5px 0 15px;
 }
 
 
 
-input[type="text"],
-input[type="number"] {
-  width: 500px;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
 
-label {
+.admin-productos label {
+  display: block;
+ margin-top: 10px;
+  font-size: 14px;
   font-weight: bold;
+}
+
+.admin-productos input {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Botón guardar */
+.admin-productos button {
+  width: 100%;
+  padding: 7px;
+  margin-top: 5px;
+}
+
+.admin-productos button:hover {
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+}
+
+
+/* =========================
+   TABLA
+   ========================= */
+
+.tabla-container {
+  width: 95%;
+  margin: 30px auto;
+  overflow-x: auto;
+  background: #eee;
 }
 
 table {
   width: 100%;
-  margin-top: 20px;
+  min-width: 1200px;
   border-collapse: collapse;
-  background-color: #f9f9f9;
-  border: 2px solid #110f0f;
 }
 
 th,
 td {
-   border: 2px solid #110f0f;
-  text-align: left;
-  padding: 5px 8px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  white-space: nowrap;
 }
 
-button {
- 
-  margin-right: 5px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.descripcion {
+  white-space: normal;
+ width: 300px;
+
 }
 
+.acciones {
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 480px) {
+
+  .admin-productos {
+    width: 280px;
+    height: 200px;
+    min-height: 200px;
+    margin: 20px auto;
+    padding: 12px;
+  }
+
+}

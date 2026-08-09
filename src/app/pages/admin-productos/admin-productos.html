@@ -23,6 +23,28 @@
 </div>
 
 <div>
+  <label>Color</label><br>
+  <input type="text" [(ngModel)]="color">
+</div>
+
+<div>
+  <label>Descuento</label><br>
+  <input type="number" [(ngModel)]="descuento">
+</div>
+
+<div >
+  <label>Imagen</label><br>
+  <input type="text" [(ngModel)]="imagen">
+</div>
+
+<div >
+  <label>Imagenes</label><br>
+  <input type="text" [(ngModel)]="imagenes">
+</div>
+
+
+
+<div>
   <label>Descripción</label><br>
   <textarea [(ngModel)]="descripcion"></textarea>
 </div>
@@ -33,39 +55,42 @@
 
 <hr>
 
+<div class="tabla-container">
+
 <h2>Lista de productos</h2>
 
-<table border="1">
+<table>
+   <thead>
+     <tr> 
+      <th>ID</th>
+       <th>Nombre</th> 
+       <th>Precio</th> 
+       <th>Color</th> 
+       <th>Descuento</th> 
+       <th>Imagen</th> 
+       <th>Imágenes</th> 
+       <th>Descripción</th> 
+       <th>Acciones</th> 
+      </tr> 
+    
+    </thead> 
+    <tbody> 
+      <tr *ngFor="let producto of productoss"> 
+        <td>{{ producto.id }}</td> 
+        <td>{{ producto.nombre }}</td> 
+        <td>{{ producto.precio }}</td>
+         <td>{{ producto.color }}</td> 
+         <td>{{ producto.descuento }}</td> 
+         <td class="producto-imagen">{{ producto.imagen }}</td> 
+         <td class="producto-imagen">{{ producto.imagenes }}</td> 
+         <td class="descripcion">{{ producto.descripcion }}</td> 
+         <td class="acciones">
 
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Precio</th>
-    <th>Categoría</th>
-    <th>Descripción</th>
-    <th>Acciones</th>
+           <button (click)="editar(producto)"> Editar </button>
 
-  </tr>
-
-  <tr *ngFor="let producto of productoss">
-
-    <td>{{producto.id}}</td>
-    <td>{{producto.nombre}}</td>
-    <td>{{producto.precio}}</td>
-    <td>{{producto.categoria}}</td>
-    <td>{{producto.descripcion}}</td>
-   <td>
-
-  <button (click)="editar(producto)" >
-    Editar
-  </button>
-
-  <button (click)="eliminar(producto.docId)">
-    Eliminar
-  </button>
-
-</td>
-
-  </tr>
-
-</table>
+            <button (click)="eliminar(producto.docId)"> Eliminar </button>
+ </td> 
+</tr> 
+</tbody>
+ </table>
+ </div>

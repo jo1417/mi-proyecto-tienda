@@ -1,4 +1,6 @@
-<h1>Administración de Productos</h1>
+<div class="carrucel-container">
+
+<h1>Administración de Carrusel</h1>
 
 <div>
   <label>ID</label><br>
@@ -7,11 +9,36 @@
 
 <div>
   <label>Imagen</label><br>
-  <input type="text" [(ngModel)]="img">
+  <input type="text" [(ngModel)]="imagen">
 </div>
 
 
 
 
 <button (click)="guardarCarrucel()">Guardar imagen</button>
+</div>
+<hr>
+
+<table>
+   <thead>
+     <tr> 
+      <th>ID</th>
+       <th>Imagen</th> 
+       <th>Acciones</th> 
+      </tr> 
+    
+    </thead> 
+    <tbody> 
+      <tr *ngFor="let carruceles of carrucel"> 
+        <td>{{ carruceles.id }}</td> 
+         <td class="producto-imagen">{{ carruceles.imagen }}</td> 
+         <td class="acciones">
+
+           <button (click)="editar(carruceles)"> Editar </button>
+
+            <button (click)="eliminar(carruceles.docId)"> Eliminar </button>
+ </td> 
+</tr> 
+</tbody>
+ </table>
 

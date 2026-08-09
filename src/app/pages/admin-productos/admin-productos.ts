@@ -14,11 +14,16 @@ export class AdminProductos implements OnInit {
 productoss: any[] = [];
 docIdEditando = '';
 
-  id = 0;
-  nombre = '';
+id = 0;
+nombre = '';
 precio = 0;
 categoria = '';
 descripcion = '';
+color = '';
+descuento = 0;
+imagen = '/assets/img/';
+imagenes: string[] = [];
+
 
 constructor(private productos: Productos) {}
 
@@ -33,7 +38,11 @@ async guardarProducto() {
       this.nombre,
       this.precio,
       this.categoria,
-      this.descripcion
+      this.descripcion,
+      this.color,
+      this.descuento,
+      this.imagen,
+      this.imagenes
     );
 
     alert('Producto guardado correctamente');
@@ -76,6 +85,11 @@ editar(producto: any) {
   this.precio = producto.precio;
   this.categoria = producto.categoria;
   this.descripcion = producto.descripcion;
+  this.color = producto.color;
+  this.descuento = producto.descuento;
+  this.imagen = producto.imagen;
+  this.imagenes = producto.imagenes;
+
 
    document.getElementById('admin-productos')?.scrollIntoView({
     behavior: 'smooth'
@@ -84,3 +98,4 @@ editar(producto: any) {
 }
 
 }
+

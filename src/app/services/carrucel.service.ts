@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of, tap } from 'rxjs';
 
-import { collection, getDocs } from 'firebase/firestore';
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  updateDoc
+} from 'firebase/firestore';
+
 import { db } from '../config/firebase';
-import { DataSource } from '../config/data-source';
-import { addDoc } from 'firebase/firestore';
 
 export interface Imagen {
   id: number;
-  img: string;
+  imagen: string;
 }
 
 @Injectable({
@@ -17,67 +21,119 @@ export interface Imagen {
 })
 export class CarrucelService {
 
+  // =========================
+  // AGREGAR
+  // =========================
 
-  async agregarCarrucel( 
+  async agregarCarrucel(
     id: number,
-    img: string) {
-  
-   const carrucelRef = collection(db, 'carrucel');
-  
-   await addDoc(carrucelRef, {
+    imagen: string
+  ) {
+
+    const carrucelRef = collection(
+      db,
+      'carrucel'
+    );
+
+    await addDoc(carrucelRef, {
       id,
-      img
+      imagen
     });
-  
-    alert('Producto guardado');
-  
+
   }
 
-   
-    
 
-  private baseUrl = 'http://localhost:3000';
-  private cache: Imagen[] | null = null;
+  // =========================
+  // OBTENER
+  // =========================
 
-  constructor(private http: HttpClient) {}
+  async obtenerCarrucel() {
 
-  getCarrusel(): Observable<Imagen[]> {
+    const carrucelRef = collection(
+      db,
+      'carrucel'
+    );
 
-    if (this.cache) {
-      return of(this.cache);
-    }
+    const snapshot = await getDocs(
+      carrucelRef
+    );
 
-    // Datos locales
-    if (!DataSource.firebase) {
+    return snapshot.docs.map(documento => ({
 
-      return this.http.get<Imagen[]>(`${this.baseUrl}/carrucel`).pipe(
-        tap(data => this.cache = data)
-      );
+      docId: documento.id,
 
-    }
+      ...documento.data()
 
-    // Firebase
-    return new Observable<Imagen[]>(observer => {
+    }));
 
-      getDocs(collection(db, 'carrucel'))
-        .then(snapshot => {
+  }
 
-          const imagenes = snapshot.docs.map(doc => ({
-            ...doc.data()
-          })) as Imagen[];
 
-          this.cache = imagenes;
+  // =========================
+  // ELIMINAR
+  // =========================
 
-          observer.next(imagenes);
-          observer.complete();
+  async eliminarCarrucel(
+    docId: string
+  ) {
 
-        })
-        .catch(error => {
-          console.error(error);
-          observer.error(error);
-        });
+    const carrucelRef = doc(
+      db,
+      'carrucel',
+      docId
+    );
+
+    await deleteDoc(carrucelRef);
+
+  }
+
+
+  // =========================
+  // EDITAR
+  // =========================
+
+  async editarCarrucel(
+    docId: string,
+    id: number,
+    imagen: string
+  ) {
+
+    const carrucelRef = doc(
+      db,
+      'carrucel',
+      docId
+    );
+
+    await updateDoc(carrucelRef, {
+
+      id,
+      imagen
 
     });
+
+  }
+
+
+  // =========================
+  // OBTENER PARA EL CARRUCEL
+  // =========================
+
+  async getCarrusel(): Promise<Imagen[]> {
+
+    const carrucelRef = collection(
+      db,
+      'carrucel'
+    );
+
+    const snapshot = await getDocs(
+      carrucelRef
+    );
+
+    return snapshot.docs.map(documento => ({
+
+      ...documento.data()
+
+    })) as Imagen[];
 
   }
 

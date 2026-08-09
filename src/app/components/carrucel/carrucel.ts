@@ -14,9 +14,9 @@ import { CarrucelService, Imagen } from '../../services/carrucel.service';
 export class Carrucel implements OnInit {
 
   imagenesIzq: Imagen[] = [];
+
   posicionActual = 0;
 
-  // Links quemados
   links = [
     { nombre: 'Colchones',  img: '/assets/img/colchonInicio.jpg',   ruta: '/categoria/colchon' },
     { nombre: 'Espaldares', img: '/assets/img/espaldarInicio.jpg',  ruta: '/categoria/espaldar' },
@@ -33,42 +33,55 @@ export class Carrucel implements OnInit {
     private cd: ChangeDetectorRef
   ) {}
 
-ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
 
-  console.time("Carrucel");
+    console.time('Carrucel');
 
-  this.carrucelService.getCarrusel().subscribe({
+    try {
 
-    next: (data) => {
+      const data = await this.carrucelService.getCarrusel();
 
-      console.timeEnd("Carrucel");
+      console.timeEnd('Carrucel');
+
       console.log(data);
 
       this.imagenesIzq = data;
+
       this.posicionActual = 0;
 
       this.cd.detectChanges();
 
-    },
+    } catch (error) {
 
-    error: (err) => console.error(err)
+      console.error('Error cargando carrucel:', error);
 
-  });
+    }
 
-}
+  }
 
   siguiente() {
-    if (this.imagenesIzq.length === 0) return;
+
+    if (this.imagenesIzq.length === 0) {
+      return;
+    }
 
     this.posicionActual =
-      (this.posicionActual + 1) % this.imagenesIzq.length;
+      (this.posicionActual + 1) %
+      this.imagenesIzq.length;
+
   }
 
   anterior() {
-    if (this.imagenesIzq.length === 0) return;
+
+    if (this.imagenesIzq.length === 0) {
+      return;
+    }
 
     this.posicionActual =
-      (this.posicionActual - 1 + this.imagenesIzq.length) %
+      (this.posicionActual - 1 +
+        this.imagenesIzq.length) %
       this.imagenesIzq.length;
+
   }
+
 }

@@ -12,7 +12,12 @@ async agregarProducto(
   nombre: string,
   precio: number,
   categoria: string,
-  descripcion: string) {
+  descripcion: string,
+  color: string,
+  descuento: number,
+  imagen: string,
+  imagenes: string[]
+) {
 
  const productosRef = collection(db, 'productos');
 
@@ -21,7 +26,11 @@ async agregarProducto(
     nombre,
     precio,
     categoria,
-    descripcion
+    descripcion,
+    color,
+    descuento,
+    imagen,
+    imagenes
   });
 
   alert('Producto guardado');
@@ -55,7 +64,11 @@ async editarProducto(
   nombre: string,
   precio: number,
   categoria: string,
-  descripcion: string
+  descripcion: string,
+  color: string,
+  descuento: number,
+  imagen: string,
+  imagenes: string[]
 ) {
 
   const productoRef = doc(db, 'productos', docId);
@@ -65,7 +78,11 @@ async editarProducto(
     nombre,
     precio,
     categoria,
-    descripcion
+    descripcion,
+    color,
+    descuento,
+    imagen,
+    imagenes
   });
 
 }
