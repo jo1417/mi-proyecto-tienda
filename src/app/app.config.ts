@@ -12,7 +12,11 @@ export const appConfig: ApplicationConfig = {
     // HABILITO HTTPCLIENT PARA REALIZAR PETICIONES HTTP,
 // COMO LAS QUE USO PARA COMUNICARME CON LA API DE JSON SERVER.
     provideHttpClient(withFetch()),
+
+    //ESCUCHA ERRORES GLOBALES DEL NAVEGADOR
     provideBrowserGlobalErrorListeners(),
+
+    
     provideRouter(routes), provideClientHydration(withEventReplay())
   ]
 };
