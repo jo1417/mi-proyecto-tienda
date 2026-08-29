@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Carrucel } from "../../components/carrucel/carrucel";
 import { Productoss } from '../productoss/productoss';
 import { Barrapublicidad } from "../../components/barrapublicidad/barrapublicidad";
+import { CombosComponent } from "../../combos/combos";
+import { QuienesSomos } from "../../quienes-somos/quienes-somos";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, Carrucel, Productoss,  Barrapublicidad],
+  imports: [CommonModule, Carrucel, Productoss, Barrapublicidad, CombosComponent, QuienesSomos],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })

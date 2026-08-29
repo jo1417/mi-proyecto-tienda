@@ -1,79 +1,128 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
+
+import { Requisitos } from './components/requisitos/requisitos';
+import { Carrucel } from './components/carrucel/carrucel';
+import { CombosComponent } from './combos/combos';
+import { QuienesSomos } from './quienes-somos/quienes-somos';
+import { Productoss } from './pages/productoss/productoss';
 import { productsResolver } from './products-resolver';
 import { ProductoDetalleComponent } from './components/producto-detalle/producto-detalle';
-import { Productoss } from './pages/productoss/productoss';
-import { Requisitos } from './components/requisitos/requisitos';
+
+//IMPORT DE LOS SERVICIOS
 import { Productos } from './services/productos';
 import { CarrucelService } from './services/carrucel.service';
 
-//import de los componentes para el login y la seguridad de las rutas
+
+//IMPORT DE LOS COMPONENTES DEL LOGIN Y LA SEGURIDAD DE LAS RUTAS
 import { Login } from './pages/login/login';
 import { authGuard } from './guards/auth-guard';
 import { Admin } from './pages/admin/admin';
 import { AdminProductos } from './pages/admin-productos/admin-productos';
 import { AdminCarrucel } from './pages/admin-carrucel/admin-carrucel';
-import { Carrucel } from './components/carrucel/carrucel';
-
+import { AdminCombos } from './admin-combos/admin-combos';
 
 
 export const routes: Routes = [
+
+  //CONEXION PRINCIPAL DE LA PAGINA
 
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
   {
     path: 'home',
     component: Home,
     resolve: { productos: productsResolver }
   },
-    
-  {path: 'productoss', component: Productoss},
-  { path: 'categoria/:slug', component: Productoss },
-  {path: 'requisitos', component: Requisitos},
-  { path: 'productos/:id', component: ProductoDetalleComponent },
+
+
+   {
+     path: 'requisitos', 
+     component: Requisitos
+   },
+
+   {
+     path: 'carrucel',
+     component: Carrucel
+  },
 
   {
-  path: 'login',
-  component: Login
-},
+     path: 'combos',
+     component: CombosComponent
+  },
 
   {
-  path: 'productos',
-  component: Productos
-},
+     path: 'quienesSomos',
+     component: QuienesSomos
+  },
 
- {
-  path: 'carrucel',
-  component: CarrucelService
-},
- {
-  path: 'carrucel',
-  component: Carrucel
-},
+  {
+     path: 'productoss',
+     component: Productoss
+  },
 
-{
-  path: 'admin',
-  component: Admin,
-  canActivate: [authGuard]
-},
+  { 
+     path: 'categoria/:slug',
+     component: Productoss 
+  },
 
-{
-  path: 'admin-productos',
-  component: AdminProductos,
-   canActivate: [authGuard]
+  { 
+     path: 'productos/:id',
+     component: ProductoDetalleComponent 
+
+  },
+
+
+//CONEXION DE LOS SERVICIOS
+
+  {
+     path: 'productos',
+     component: Productos
+  },
+
+  {
+     path: 'carrucel',
+     component: CarrucelService
+  },
+
+
+//CONEXION CON EL ADMIN LOGIN
+
+  {
+     path: 'login',
+     component: Login
+  },
+
+  {
+     path: 'admin',
+     component: Admin,
+     canActivate: [authGuard]
+  },
+
+  {
+     path: 'admin-productos',
+     component: AdminProductos,
+     canActivate: [authGuard]
   
-},
+  },
 
-{
-  path: 'admin-carrucel',
-  component: AdminCarrucel,
-   canActivate: [authGuard]
+  {
+     path: 'admin-carrucel',
+     component: AdminCarrucel,
+     canActivate: [authGuard]
   
-}
+  },
 
+  {
+     path: 'admin-combos',
+     component: AdminCombos,
+     canActivate: [authGuard]
+  
+  }
 
 ];
 

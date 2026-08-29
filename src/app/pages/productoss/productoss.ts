@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 
 export class Productoss implements OnInit {
 
+// variables para almacenar productos, colores y filtros
+
 productos: any[] = [];
 colores: string[] = [];
 slug: string | null = null;
@@ -39,6 +41,9 @@ private router: Router
 ) {}
 
 ngOnInit(): void {
+
+
+
 this.slug = this.route.snapshot.paramMap.get('slug');
 
  this.route.queryParams.subscribe(params => {
@@ -51,18 +56,31 @@ console.log("Pidiendo productos...");
 this.productosService.getProductos().subscribe({
   next: data => {
 
+    console.log('DATA COMPLETA:', data);
+
     console.log("Productos recibidos:", data);
 
     // guardo productos
-    this.productos = data.map(p => ({
-      ...p,
-      imagenActiva: p.imagenes && p.imagenes.length
-        ? p.imagenes[0]
-        : p.imagen
-    }));
+   this.productos = data.map(p => {
+
+  console.log('PRODUCTO RECIBIDO:', p);
+  console.log('CUOTA QUINCENAL:', p.quincenal);
+
+  return {
+    ...p,
+    imagenActiva: p.imagenes && p.imagenes.length
+      ? p.imagenes[0]
+      : p.imagen
+  };
+
+});
 
     console.log("Productos procesados:", this.productos);
 
+
+
+
+    
 // obtener colores únicos
 this.colores = Array.from(
   new Set(this.productos.map(p => p.color))

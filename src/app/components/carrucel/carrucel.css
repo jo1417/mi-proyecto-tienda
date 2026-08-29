@@ -11,7 +11,7 @@ body {
 /* Espacio principal 
 donde se encuenta el carrucel y los links */
 
-.carrucel-general {
+.contenedor-general {
  margin-top: 6.3rem;   
  display: grid;
  grid-template-columns: 2fr 1.3fr ;
@@ -19,12 +19,12 @@ donde se encuenta el carrucel y los links */
  max-width: 100%;
  padding: 0 12px;
  border-bottom: 2.5px solid rgba(255, 255, 255, 0.87); 
- background-image: url(/assets/img/smooth-surface-with-light.jpg);
+ background-image: url(/assets/img/fondo5.jpg);
 }
 
 /* Espacio del carrucel */
 
-.carousel-contenedor {
+.carrucel-contenedor {
  width: 100%;    
  overflow: hidden;
  border-radius: 14px;
@@ -33,11 +33,11 @@ donde se encuenta el carrucel y los links */
  padding-bottom: 1.5rem;
 }
 
-.carousel-inicio {
+.carrucel-inicio {
  width: 100%;
 }
 
-.carousel-imagen {
+.carrucel-imagen {
  width: 100%;
  max-height: 380px;    
  margin: 0 auto;  
@@ -116,6 +116,8 @@ donde se encuenta el carrucel y los links */
  font-family: sans-serif;
  text-decoration: none;
  color: #000;
+ text-decoration: none;
+
 }
 
 /* Efecto hover de la tarjeta */
@@ -127,6 +129,10 @@ donde se encuenta el carrucel y los links */
 
 /* Responsive*/
 @media (max-width: 900px) {
+
+.contenedor-general{
+  grid-template-columns: 1fr
+}
 .carrucel-general {
 grid-template-columns: 1fr;
 }
@@ -139,7 +145,7 @@ grid-template-columns: 1fr;
 
 /*Movil*/
 @media (max-width: 480px) {
-.carrucel-general {
+.contenedor-general {
  margin-top: 7rem;
  grid-template-columns: 1fr;
  gap: 0px;

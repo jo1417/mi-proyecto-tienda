@@ -18,6 +18,16 @@
 </div>
 
 <div>
+  <label>inicial</label><br>
+  <input type="number" [(ngModel)]="inicial">
+</div>
+
+<div>
+  <label>quincenal</label><br>
+  <input type="number" [(ngModel)]="quincenal">
+</div>
+
+<div>
   <label>Categoría</label><br>
   <input type="text" [(ngModel)]="categoria">
 </div>
@@ -25,6 +35,11 @@
 <div>
   <label>Color</label><br>
   <input type="text" [(ngModel)]="color">
+</div>
+
+<div>
+  <label>tipo</label><br>
+  <input type="text" [(ngModel)]="tipo">
 </div>
 
 <div>
@@ -65,7 +80,10 @@
       <th>ID</th>
        <th>Nombre</th> 
        <th>Precio</th> 
+       <th>inicial</th>
+       <th>quincenal</th>
        <th>Color</th> 
+       <th>Tipo</th>
        <th>Descuento</th> 
        <th>Imagen</th> 
        <th>Imágenes</th> 
@@ -79,7 +97,10 @@
         <td>{{ producto.id }}</td> 
         <td>{{ producto.nombre }}</td> 
         <td>{{ producto.precio }}</td>
+        <td>{{ producto.inicial }}</td>
+        <td>{{ producto.quincenal}}</td>
          <td>{{ producto.color }}</td> 
+         <td>{{ producto.tipo }}</td>
          <td>{{ producto.descuento }}</td> 
          <td class="producto-imagen">{{ producto.imagen }}</td> 
          <td class="producto-imagen">{{ producto.imagenes }}</td> 

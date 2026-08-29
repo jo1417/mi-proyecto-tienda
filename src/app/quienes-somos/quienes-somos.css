@@ -1,0 +1,472 @@
+
+.quienes-section {
+  width: 100%;
+  padding: 50px 2rem 60px;
+  background: #f8f9fb;
+  box-sizing: border-box;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 2%,
+    black 98%,
+    transparent 100%
+  );
+
+}
+
+
+
+.quienes-contenedor {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.quienes-info {
+  padding-left: 35px;
+}
+
+.subtitulo {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  color: #918055;
+}
+
+
+.quienes-info h1 {
+  margin: 0 0 20px;
+
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 700;
+
+ color: #0d0d0d;
+}
+
+
+.quienes-info h1 span {
+  display: block;
+  color: #0a0909;
+}
+
+
+.descripcion {
+  max-width: 560px;
+
+  margin: 0 0 35px;
+
+  font-size: 16px;
+  line-height: 1.65;
+
+  color: #0c0c0c;
+}
+
+
+/* =========================================
+   BENEFICIOS
+========================================= */
+
+.beneficios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 35px;
+  row-gap: 28px;
+
+  max-width: 570px;
+}
+
+
+.beneficio {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+
+.icono-beneficio {
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: #080808;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 21px;
+}
+
+
+.beneficio h3 {
+  margin: 2px 0 5px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #0c0c0c;
+}
+
+
+.beneficio p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: #41464e;
+}
+
+
+/* 
+   BOTÓN WHATSAPP
+ */
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 30px;
+  padding: 13px 22px;
+
+  border-radius: 8px;
+
+  background: #0e2316;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 0 5px 12px rgba(13, 40, 84, 0.18);
+}
+
+
+.btn-whatsapp span {
+  color: #25d366;
+  font-size: 20px;
+}
+
+
+.btn-whatsapp:hover {
+  background: #1c3523;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.quienes-imagen {
+  width: 100%;
+  height: 485px;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+}
+
+
+.quienes-imagen img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+
+.quienes-imagen:hover img {
+  transform: scale(1.02);
+}
+
+
+/* =========================================
+   CARACTERÍSTICAS
+========================================= */
+
+.caracteristicas {
+  max-width: 1380px;
+
+  margin: 35px auto 0;
+  padding: 30px 25px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+
+  align-items: center;
+
+  box-shadow:
+    0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.caracteristica {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 15px;
+
+  padding: 0 20px;
+  text-align: left;
+}
+
+
+.caracteristica-icono {
+  flex-shrink: 0;
+
+  font-size: 34px;
+  line-height: 1;
+
+  color: #060606;
+}
+
+
+.caracteristica h3 {
+  margin: 0 0 10px;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  color: #030303;
+}
+
+
+.caracteristica p {
+  max-width: 230px;
+
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: #383d45;
+}
+
+
+.separador {
+  width: 1px;
+  height: 75px;
+
+  background: #e2e2e2;
+}
+
+
+/* =========================================
+   ESTADÍSTICAS
+========================================= */
+
+.estadisticas {
+  max-width: 1380px;
+  margin: 25px auto 0;
+  padding: 28px 45px;
+background: #030303;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+}
+
+
+
+
+.estadistica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  color: white;
+}
+
+
+.estadistica-icono {
+  font-size: 40px;
+  line-height: 1;
+
+  color: white;
+}
+
+
+
+
+.estadistica strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  color: white;
+}
+
+
+.estadistica span {
+  display: block;
+
+  font-size: 13px;
+
+  color: white;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .quienes-contenedor {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  .quienes-info {
+    padding-left: 0;
+  }
+
+  .quienes-info .subtitulo{
+    padding-top: 1rem;
+  }
+
+
+  .quienes-imagen {
+    height: 420px;
+  }
+
+
+  .caracteristicas {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+
+  .separador {
+    display: none;
+  }
+
+
+  .estadisticas {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+}
+
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 650px) {
+
+  .quienes-section {
+    padding: 35px 18px 45px;
+  }
+
+
+  .quienes-info h1 {
+    font-size: 30px;
+  }
+
+   .quienes-info .subtitulo{
+    padding-top: 1rem;
+  }
+
+
+  .descripcion {
+    font-size: 15px;
+  }
+
+
+  .beneficios {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+
+  .quienes-imagen {
+    height: 300px;
+
+    border-radius: 12px;
+  }
+
+
+  .caracteristicas {
+    grid-template-columns: 1fr;
+
+    padding: 25px 15px;
+
+    gap: 28px;
+  }
+
+
+  .caracteristica {
+    justify-content: flex-start;
+  }
+
+
+  .caracteristica p {
+    max-width: none;
+  }
+
+
+  .estadisticas {
+    grid-template-columns: 1fr;
+
+    padding: 28px 25px;
+
+    gap: 25px;
+  }
+
+
+  .estadistica {
+    justify-content: flex-start;
+  }
+
+
+  .btn-whatsapp {
+    width: fit-content;
+  }
+
+}

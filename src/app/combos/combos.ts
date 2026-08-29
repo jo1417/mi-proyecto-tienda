@@ -1,11 +1,72 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Combos } from '../services/combos';
+import {Productos} from '../services/productos';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-combos',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './combos.html',
   styleUrl: './combos.css',
 })
-export class Combos {
+export class CombosComponent implements OnInit {
+
+ 
+  comboLista: any[] = [];
+  productosLista: any[] = [];
+
+  constructor(
+    private combos: Combos,
+    private productos: Productos,
+    private cdr: ChangeDetectorRef
+  ) {}
+
+  async ngOnInit() {
+
+  try {
+
+    const combos = await this.combos.obtenerCombo();
+
+    const productos = await this.productos.obtenerProductos();
+
+    this.comboLista = combos;
+    this.productosLista = productos;
+
+    this.cdr.detectChanges();
+
+  } catch (error) {
+
+    console.error('Error cargando combos:', error);
+
+  }
 
 }
+
+  obtenerProducto(docId: string) {
+
+  return this.productosLista.find(
+    producto => producto.docId === docId
+  );
+
+}
+
+obtenerLinkWhatsApp(combo: any): string {
+
+  const mensaje =
+    `Hola! Estoy interesado en el combo ${combo.nombre} con precio ${combo.precio}`;
+
+  return `https://wa.me/573046637509?text=${encodeURIComponent(mensaje)}`;
+
+}
+
+verDetalleCombo(id: number) {
+  console.log('Combo seleccionado:', id);
+}
+
+ 
+
+}
+
+
+

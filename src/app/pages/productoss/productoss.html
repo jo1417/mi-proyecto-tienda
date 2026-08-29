@@ -95,7 +95,7 @@
         <!-- Crédito -->
         <div *ngIf="p.tipo === 'credito'">
           <p>Inicial: {{ p.inicial | currency:'COP' }}</p>
-          <p>Cuota quincenal: {{ p.cuotaQuincenal | currency:'COP' }}</p>
+          <p>Cuota quincenal: {{ p.quincenal | currency:'COP' }}</p>
           <p *ngIf="p.cuotasMensuales">
             Cuotas mensuales: {{ p.cuotasMensuales }}
           </p>

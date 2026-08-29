@@ -1,0 +1,199 @@
+ <!-- CONTENEDOR -->
+
+<section class="quienes-section">
+
+  <!-- CONTENIDO PRINCIPAL -->
+
+  <div class="quienes-contenedor">
+
+      <!-- TEXTO -->
+
+     <div class="quienes-info">
+
+          <span class="subtitulo">{{ subtitulo }}</span>
+
+             <h1>
+              {{ tituloA }}
+          <span> {{ tituloB }}</span>
+              </h1>
+
+          <p class="descripcion">
+          {{ descripcion }}
+          </p>
+
+          <!-- BENEFICIOS -->
+
+         <div class="beneficios">
+
+               <div class="beneficio">
+                   <div class="icono-beneficio">
+                       <span class='bx bx-check-shield'></span>
+                  </div>
+
+                  <div>
+                      <h3>{{tituloABeneficio }}</h3>
+                           <p>
+                              {{subtituloABeneficio }}
+                         </p>
+                  </div>
+             </div>
+
+               <div class="beneficio">
+                   <div class="icono-beneficio">
+                        <span class='bx bx-car'></span>
+                  </div>
+
+                   <div>
+                          <h3>{{tituloBBeneficio }}</h3>
+                               <p>
+                                      {{subtituloBBeneficio }}
+                              </p>
+                   </div>
+              </div>
+
+               <div class="beneficio">
+                     <div class="icono-beneficio">
+                           <span class='bx bx-user'></span>
+                     </div>
+
+                     <div>
+                           <h3>{{tituloCBeneficio }}</h3>
+                                <p>
+                                     {{subtituloCBeneficio }}
+                                </p>
+                     </div>
+              </div>
+
+          </div>
+
+
+           <button class="btn-whatsapp" (click)="abrirWhatsApp()">
+                  <span class='bx bxl-whatsapp'></span>
+                       {{textoWhatsapp }}
+           </button>
+
+      </div>
+
+
+
+        <!-- IMAGEN -->
+
+        <div class="quienes-imagen">
+            <img
+                  src="assets/img/camalujoInicio.jpeg"
+                  alt="Descanso Perfecto - Camas y Colchones"
+                  >
+        </div>
+
+  </div>
+
+
+  <!-- CARACTERÍSTICAS -->
+
+  <div class="caracteristicas">
+
+     <div class="caracteristica">
+         <div class='bx bx-trophy caracteristica-icono' ></div>
+
+      <div>
+        <h3>{{tituloACaracteristica }}</h3>
+            <p>
+               {{subtituloACaracteristica }}
+            </p>
+     </div>
+ </div>
+
+
+  <div class="separador"></div>
+
+
+      <div class="caracteristica">
+          <div class='bx bx-heart caracteristica-icono'></div>
+
+          <div>
+               <h3>{{tituloBCaracteristica }}</h3>
+                    <p>
+                       {{subtituloBCaracteristica }}
+                    </p>
+          </div>
+     </div>
+
+
+       <div class="separador"></div>
+
+
+       <div class="caracteristica">
+            <div class='bx bx-grid-alt  caracteristica-icono'></div>
+
+           <div>
+                 <h3>{{tituloCCaracteristica }}</h3>
+                   <p>
+                       {{subtituloCCaracteristica }}
+                  </p>
+           </div>
+      </div>
+
+
+      <div class="separador"></div>
+
+
+      <div class="caracteristica">
+            <div class='bx bx-purchase-tag caracteristica-icono'></div>
+
+          <div>
+                <h3>{{tituloDCaracteristica }}</h3>
+                    <p>
+                        {{subtituloDCaracteristica }}
+                    </p>
+          </div>
+     </div>
+
+ </div>
+
+
+  <!-- ESTADÍSTICAS -->
+
+  <div class="estadisticas">
+
+      <div class="estadistica">
+             <div class='bx bx-group estadistica-icono'></div>
+
+           <div>
+                <strong>{{tituloAEstadistica }}</strong>
+                <span>{{subtituloAEstadistica }}</span>
+           </div>
+      </div>
+
+
+     <div class="estadistica">
+         <div class='bx bx-package estadistica-icono' ></div>
+
+         <div>
+            <strong>{{tituloBEstadistica }}</strong>
+             <span>{{subtituloBEstadistica }}</span>
+         </div>
+     </div>
+
+
+     <div class="estadistica">
+         <div  class='bx bx-star estadistica-icono' ></div>
+
+         <div>
+            <strong>{{tituloCEstadistica }}</strong>
+            <span>{{subtituloCEstadistica }}</span>
+         </div>
+     </div>
+
+
+     <div class="estadistica">
+       <div class='bx bx-map-pin  estadistica-icono' ></div>
+
+           <div>
+              <strong>{{tituloDEstadistica }}</strong>
+              <span>{{subtituloDEstadistica }}</span>
+          </div>
+      </div>
+
+ </div>
+
+</section>

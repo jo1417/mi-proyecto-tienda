@@ -1,8 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-import { CarrucelService, Imagen } from '../../services/carrucel.service';
+import { CarrucelService } from '../../services/carrucel.service';
 
 @Component({
   selector: 'app-carrucel',
@@ -13,14 +12,13 @@ import { CarrucelService, Imagen } from '../../services/carrucel.service';
 })
 export class Carrucel implements OnInit {
 
-  imagenesIzq: Imagen[] = [];
-
+  imagenes: any[] = [];
   posicionActual = 0;
 
   links = [
     { nombre: 'Colchones',  img: '/assets/img/colchonInicio.jpg',   ruta: '/categoria/colchon' },
     { nombre: 'Espaldares', img: '/assets/img/espaldarInicio.jpg',  ruta: '/categoria/espaldar' },
-    { nombre: 'Base cama',  img: '/assets/img/basecamaInicio.jpg',  ruta: '/categoria/base-cama' },
+    { nombre: 'Base cama',  img: '/assets/img/basecamaInicio.jpg',  ruta: '/categoria/basecama' },
     { nombre: 'Armarios',   img: '/assets/img/armarioInicio.jpg',   ruta: '/categoria/armario' },
     { nombre: 'Comedores',  img: '/assets/img/comedoresInicio.jpg', ruta: '/categoria/comedor' },
     { nombre: 'Peinadores', img: '/assets/img/peinadorInicio.jpg',  ruta: '/categoria/peinador' },
@@ -42,13 +40,10 @@ export class Carrucel implements OnInit {
       const data = await this.carrucelService.getCarrusel();
 
       console.timeEnd('Carrucel');
-
       console.log(data);
 
-      this.imagenesIzq = data;
-
+      this.imagenes = data;
       this.posicionActual = 0;
-
       this.cd.detectChanges();
 
     } catch (error) {
@@ -61,26 +56,26 @@ export class Carrucel implements OnInit {
 
   siguiente() {
 
-    if (this.imagenesIzq.length === 0) {
+    if (this.imagenes.length === 0) {
       return;
     }
 
     this.posicionActual =
       (this.posicionActual + 1) %
-      this.imagenesIzq.length;
+      this.imagenes.length;
 
   }
 
   anterior() {
 
-    if (this.imagenesIzq.length === 0) {
+    if (this.imagenes.length === 0) {
       return;
     }
 
     this.posicionActual =
       (this.posicionActual - 1 +
-        this.imagenesIzq.length) %
-      this.imagenesIzq.length;
+        this.imagenes.length) %
+      this.imagenes.length;
 
   }
 

@@ -1,1 +1,149 @@
-<p>combos works!</p>
+
+<div class="combos-container">
+
+  <!-- TARJETA DEL COMBO -->
+
+  <div
+    class="combo-card"
+    *ngFor="let combo of comboLista"
+    (click)="verDetalleCombo(combo.id)"
+  >
+
+    <!-- IMAGEN PRINCIPAL -->
+
+    <div class="combo-imagen">
+
+      <img
+        [src]="combo.imagenActiva || combo.imagen"
+        [alt]="combo.nombre"
+        class="imagen-principal"
+      >
+
+    </div>
+
+
+    <!-- MINIATURAS -->
+
+    <div
+      class="combo-productos"
+      (click)="$event.stopPropagation()"
+    >
+
+
+      <!-- MINIATURA DEL COMBO -->
+
+      <div class="producto-mini">
+
+        <h4 class="producto-titulo">
+          Combo
+        </h4>
+
+        <img
+          [src]="combo.imagen"
+          [alt]="combo.nombre"
+          class="miniatura"
+          (click)="combo.imagenActiva = combo.imagen"
+        >
+
+      </div>
+
+
+      <!-- BASE -->
+
+      <div
+        class="producto-mini"
+        *ngIf="combo.baseId && obtenerProducto(combo.baseId) as base"
+      >
+
+        <h4 class="producto-titulo">
+          Base
+        </h4>
+
+        <img
+          [src]="base.imagen"
+          [alt]="base.nombre"
+          class="miniatura"
+          (click)="combo.imagenActiva = base.imagen"
+        >
+
+      </div>
+
+
+      <!-- COLCHÓN -->
+
+      <div
+        class="producto-mini"
+        *ngIf="combo.colchonId && obtenerProducto(combo.colchonId) as colchon"
+      >
+
+        <h4 class="producto-titulo">
+          Colchón
+        </h4>
+
+        <img
+          [src]="colchon.imagen"
+          [alt]="colchon.nombre"
+          class="miniatura"
+          (click)="combo.imagenActiva = colchon.imagen"
+        >
+
+      </div>
+
+
+      <!-- ESPALDAR -->
+
+      <div
+        class="producto-mini"
+        *ngIf="combo.espaldarId && obtenerProducto(combo.espaldarId) as espaldar"
+      >
+
+        <h4 class="producto-titulo">
+          Espaldar
+        </h4>
+
+        <img
+          [src]="espaldar.imagen"
+          [alt]="espaldar.nombre"
+          class="miniatura"
+          (click)="combo.imagenActiva = espaldar.imagen"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- INFORMACIÓN -->
+
+    <div class="combo-info">
+
+      <h3>
+        {{ combo.nombre }}
+      </h3>
+
+      <p class="descripcion">
+        {{ combo.descripcion }}
+      </p>
+
+      <p class="precio">
+        {{ combo.precio | currency:'COP' }}
+      </p>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        [href]="obtenerLinkWhatsApp(combo)"
+        target="_blank"
+        class="btn-whatsapp"
+        (click)="$event.stopPropagation()"
+      >
+        Comprar por WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+

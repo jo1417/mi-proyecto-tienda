@@ -1,27 +1,30 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+ 
+ import { Injectable } from '@angular/core';
+ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SearchService {
 
-  //  Estado global del texto de búsqueda
-  private searchSubject = new BehaviorSubject<string>('');
+  // GUARDA EL TEXTO DE BUSQUEDA ACTUAL Y PERMITE ACTUALIZARLO (guardar)
+  private buscarDato = new BehaviorSubject<string>('');
 
-  //  Observable para escuchar cambios en otros componentes
-  search$ = this.searchSubject.asObservable();
+  // PERMITEN QUE OTROS COMPONENTES ESCUCHEN LOS CAMBIOS DEL TEXTO DE BUSQUEDA 
+  search$ = this.buscarDato.asObservable();
 
-  //  Método para enviar texto desde cualquier componente
-  setSearch(texto: string) {
-    this.searchSubject.next(texto);
-  }
+  // ACTUALIZA EL DATO QUE TENIA POR OTRO NUEVO (cambiar)
+  cambiarBuscar(texto: string) {
+    this.buscarDato.next(texto);
+  } 
 
-  //  Método para obtener el valor actual sin suscribirse
-  getSearch(): string {
-    return this.searchSubject.getValue();
+  // DEVUELVE EL TEXTO DE BUSQUEDA QUE ESTA GUARDADO ACUALMENTE(consultar)
+  obtenerBuscar(): string {
+    return this.buscarDato.getValue();
   }
 }
+
 
 
 

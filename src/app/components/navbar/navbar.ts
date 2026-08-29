@@ -22,9 +22,11 @@ toggleSidebar() {
 this.sidebarOpen = !this.sidebarOpen;
 }
 
+
+
 buscar(texto: string) {
 // Actualiza el texto del buscador global
-this.searchService.setSearch(texto);
+this.searchService.cambiarBuscar(texto);
 
 // Redirige a /productos si no estás ahí
 if (this.router.url !== '/productoss') {

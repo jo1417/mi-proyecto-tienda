@@ -32,11 +32,13 @@ border-bottom: 3px solid rgb(247, 244, 244);
 }
 
 .logo {
-font-size: 24px;
+padding-left: 1rem;
+font-size: 28px;
 font-weight: bold;
 cursor: pointer;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-color: #e53935;
+color: #aea168eb;
+
 
 
 }
@@ -50,29 +52,37 @@ margin-left: 5px;
 }
 
 .bx-home-alt{
-padding: 1rem;
-background: gray;
-border: rgb(248, 246, 245) 2px solid;
+padding: 0.5rem;
+background: rgb(7, 7, 7);
+color: rgb(255, 255, 255);
+border: rgb(10, 10, 10) 2px solid;
+border-radius: 50%;
 }
 
 
 .bxl-whatsapp{
 background: rgb(27, 131, 27);
-padding: 1rem;
-border: rgb(250, 248, 248) 2px solid;
+padding: 0.5rem;
+color: #f7f7f7;
+border: rgb(11, 10, 10) 1px solid;
+border-radius: 50%;
+
 }
 
 .bxl-instagram{
 background: rgb(126, 41, 73);
-padding: 1rem;
-border: rgb(250, 247, 246) 2px solid;
+padding: 0.5rem;
+color: #faf8f8;
+border: rgb(8, 7, 7) 1px solid;
+border-radius: 50%;
 }
 
 .bxl-facebook{
-  
     background: rgb(43, 34, 119);
-  padding: 1rem;
-   border: rgb(245, 243, 243) 2px solid;
+  padding: 0.5rem;
+  color: #f7f7f7;
+   border: rgb(6, 6, 6) 1px solid;
+   border-radius: 50%;
   
 }
 
