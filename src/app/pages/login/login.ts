@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Login {
 
-  email: string = '@gmail.com';
+  email: string = '';
   password: string = '';
   
   constructor(private auth: Auth, private router: Router) {}
@@ -27,7 +27,7 @@ export class Login {
 
       //ejecuto tanto el error en consola como un alert para el usuario
        console.error(error);
-      alert('Error al iniciar sesión: ');
+      alert('Correo o contraseña incorrectos. ');
     }
   }
  

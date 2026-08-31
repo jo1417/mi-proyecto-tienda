@@ -1,4 +1,3 @@
-
 import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
 import { auth } from '../config/firebase';
@@ -10,7 +9,7 @@ export const authGuard: CanActivateFn = () => {
   return new Promise<boolean>((resolve) => {
     onAuthStateChanged(auth, (user) => {
 
-      if (user) {
+      if (user && user.uid === '9A33Y2Xe5Cg3PDwYPPBp1oTuIF43') {
         resolve(true);
       } else {
         router.navigate(['/login']);
