@@ -1,0 +1,258 @@
+/* CONTENEDOR PRINCIPAL */
+
+.detalle-container {
+  max-width: 1200px;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  background: white;
+}
+
+
+/* =========================
+   GALERÍA
+========================= */
+
+.detalle-galeria {
+  display: flex;
+  gap: 20px;
+}
+
+
+/* MINIATURAS */
+
+.miniaturas-vertical {
+  width: 80px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.miniaturas-vertical img {
+  width: 70px;
+  height: 70px;
+
+  object-fit: cover;
+
+  border: 2px solid #ddd;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.miniaturas-vertical img:hover {
+  border-color: #333;
+}
+
+.miniaturas-vertical img.activa {
+  border-color: #000;
+}
+
+
+/* IMAGEN PRINCIPAL */
+
+.imagen-principal {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 450px;
+}
+
+.imagen-principal img {
+  width: 100%;
+  max-width: 500px;
+  height: 450px;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+   INFORMACIÓN DEL COMBO
+========================= */
+
+.detalle-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detalle-info h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.detalle-info > p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* DESCRIPCIÓN */
+
+.descripcion {
+  margin-top: 20px;
+
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* PRECIO */
+
+.precios {
+  margin-top: 20px;
+}
+
+.precio-final {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+/* PRECIO ANTERIOR */
+
+.precio-tachado {
+  text-decoration: line-through;
+
+  color: #888;
+
+  font-size: 18px;
+  margin: 0;
+}
+
+
+/* DESCUENTO */
+
+.descuento {
+  display: inline-block;
+
+  margin-top: 8px;
+  padding: 5px 10px;
+
+  background: #e53935;
+  color: white;
+
+  border-radius: 5px;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   BOTÓN WHATSAPP
+========================= */
+
+.btn-whatsapp {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-top: 25px;
+  padding: 14px 25px;
+
+  background: #25d366;
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.03);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+  .detalle-container {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+
+  .detalle-galeria {
+    flex-direction: column-reverse;
+  }
+
+
+  /* Miniaturas horizontales */
+
+  .miniaturas-vertical {
+    width: 100%;
+
+    flex-direction: row;
+
+    overflow-x: auto;
+
+    justify-content: center;
+  }
+
+  .miniaturas-vertical img {
+    flex-shrink: 0;
+
+    width: 65px;
+    height: 65px;
+  }
+
+
+  /* Imagen principal */
+
+  .imagen-principal {
+    min-height: 300px;
+  }
+
+  .imagen-principal img {
+    height: 300px;
+  }
+
+
+  /* Información */
+
+  .detalle-info h1 {
+    font-size: 26px;
+  }
+
+  .precio-final {
+    font-size: 26px;
+  }
+
+  .btn-whatsapp {
+    width: 100%;
+
+    text-align: center;
+
+    box-sizing: border-box;
+  }
+
+}

@@ -1,0 +1,100 @@
+<div class="detalle-container" *ngIf="combo">
+
+  <!-- GALERÍA -->
+  <div class="detalle-galeria">
+
+    <!-- MINIATURAS -->
+    <div class="miniaturas-vertical">
+
+      <!-- IMAGEN DEL COMBO -->
+      <img
+        [src]="combo.imagen"
+        [alt]="combo.nombre"
+        (click)="cambiarImagen(combo, combo.imagen)"
+        [class.activa]="combo.imagen === combo.imagenActiva"
+      >
+
+
+      <!-- IMAGEN DE LA BASE -->
+      <img
+        *ngIf="combo.baseId && obtenerProducto(combo.baseId) as base"
+        [src]="base.imagen"
+        [alt]="base.nombre"
+        (click)="cambiarImagen(combo, base.imagen)"
+        [class.activa]="base.imagen === combo.imagenActiva"
+      >
+
+
+      <!-- IMAGEN DEL COLCHÓN -->
+      <img
+        *ngIf="combo.colchonId && obtenerProducto(combo.colchonId) as colchon"
+        [src]="colchon.imagen"
+        [alt]="colchon.nombre"
+        (click)="cambiarImagen(combo, colchon.imagen)"
+        [class.activa]="colchon.imagen === combo.imagenActiva"
+      >
+
+
+      <!-- IMAGEN DEL ESPALDAR -->
+      <img
+        *ngIf="combo.espaldarId && obtenerProducto(combo.espaldarId) as espaldar"
+        [src]="espaldar.imagen"
+        [alt]="espaldar.nombre"
+        (click)="cambiarImagen(combo, espaldar.imagen)"
+        [class.activa]="espaldar.imagen === combo.imagenActiva"
+      >
+
+    </div>
+
+
+    <!-- IMAGEN PRINCIPAL -->
+
+    <div class="imagen-principal">
+
+      <img
+        [src]="combo.imagenActiva || combo.imagen"
+        [alt]="combo.nombre"
+      >
+
+    </div>
+
+  </div>
+
+
+  <!-- INFORMACIÓN -->
+
+  <div class="detalle-info">
+
+    <h1>{{ combo.nombre }}</h1>
+
+    <p class="descripcion">
+      {{ combo.descripcion }}
+    </p>
+
+
+    <!-- PRECIO DEL COMBO -->
+
+    <div class="precios">
+
+      <p class="precio-final">
+        {{ combo.precio | currency:'COP':'symbol':'1.0-0' }}
+      </p>
+
+    </div>
+
+
+
+
+    <!-- WHATSAPP -->
+
+    <a
+      [href]="obtenerLinkWhatsApp(combo)"
+      target="_blank"
+      class="btn-whatsapp"
+    >
+      Comprar por WhatsApp
+    </a>
+
+  </div>
+
+</div>

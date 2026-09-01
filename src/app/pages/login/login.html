@@ -2,32 +2,34 @@
 <div class="contenedor-login">
 
   <section>
-<h2>Iniciar sesión</h2>
+    <h2>Iniciar sesión</h2>
 
-<div class="formulario-login">
-<div>
-  <label>Correo electrónico</label><br>
-  <input
-    type="email"
-    [(ngModel)]="email"
-    placeholder="Correo electrónico">
-</div>
-
-
-<div>
-  <label>Contraseña</label><br>
-  <input
-    type="password"
-    [(ngModel)]="password"
-    placeholder="Contraseña">
-</div>
-</div>
+   <div class="formulario-login">
+      <div>
+         <label>Correo electrónico</label><br>
+         <input
+          type="email"
+          [(ngModel)]="email"
+          placeholder="Correo electrónico">
+      </div>
 
 
-<button (click)="login()">
-  Iniciar sesión
-</button>
+       <div>
+          <label>Contraseña</label><br>
+          <input
+           type="password"
+           [(ngModel)]="password"
+           placeholder="Contraseña">
+      </div>
+   </div>
 
-</section>
+    
+
+
+    <button (click)="login()">
+     Iniciar sesión
+    </button>
+
+  </section>
 
 </div>

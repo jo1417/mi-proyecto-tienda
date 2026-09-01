@@ -16,7 +16,7 @@ export class Login {
   
   constructor(private auth: Auth, private router: Router) {}
 
-  //async me ayuda a avisarle a javascript que esta funcion me va a tomar un tiempo en ejecutarla
+  //ASYNC ME AYUDA A AVISARLE A JAVASCRIPT QUE ESTA FUNCION ME VA A TOMAR UN TIEMPO EN EJECUTARLA
   async login() {
     //try y catch uno me ayuda a ejecutar un posible error y el otro me ayuda a avisarlo tanto en mi consola como al usuario
     try {

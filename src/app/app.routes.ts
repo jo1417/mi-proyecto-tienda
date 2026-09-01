@@ -8,6 +8,7 @@ import { QuienesSomos } from './quienes-somos/quienes-somos';
 import { Productoss } from './pages/productoss/productoss';
 import { productsResolver } from './products-resolver';
 import { ProductoDetalleComponent } from './components/producto-detalle/producto-detalle';
+import { ComboDetalleComponent } from './combos-detalle/combos-detalle';
 
 //IMPORT DE LOS SERVICIOS
 import { Productos } from './services/productos';
@@ -75,6 +76,11 @@ export const routes: Routes = [
      component: ProductoDetalleComponent 
 
   },
+
+  {
+  path: 'combo-detalle/:id',
+  component: ComboDetalleComponent
+},
 
 
 //CONEXION DE LOS SERVICIOS

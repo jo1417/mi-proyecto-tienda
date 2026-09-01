@@ -142,12 +142,12 @@ obtenerLinkWhatsApp(p: any): string {
 const mensaje = `Hola! Estoy interesado en el producto ${p.nombre} con precio ${this.precioFinal(p)}`;
   return `https://wa.me/573046637509?text=${encodeURIComponent(mensaje)}`;
 }
-
 verDetalle(id: number) {
-this.router.navigate(['/productos', id]);
-}
+ 
+ 
+    this.router.navigate(['/productos', id]);
+   }
 
-//esta funcion me ayuda a renderizar mi pagina cuando agrego un producto nuevo solo se actualiza ese producto que agregue o modifique mas no todos nuevamente 
 
   productosId(_index: number, item: any): number {
     return item.id;

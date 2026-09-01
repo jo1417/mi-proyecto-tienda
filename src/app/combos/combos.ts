@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Combos } from '../services/combos';
 import {Productos} from '../services/productos';
 import { ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-combos',
@@ -19,7 +21,8 @@ export class CombosComponent implements OnInit {
   constructor(
     private combos: Combos,
     private productos: Productos,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router : Router
   ) {}
 
   async ngOnInit() {
@@ -51,6 +54,11 @@ export class CombosComponent implements OnInit {
 
 }
 
+verDetalleCombo(docId: string) {
+  this.router.navigate(['/combo-detalle', docId]);
+}
+
+
 obtenerLinkWhatsApp(combo: any): string {
 
   const mensaje =
@@ -60,9 +68,6 @@ obtenerLinkWhatsApp(combo: any): string {
 
 }
 
-verDetalleCombo(id: number) {
-  console.log('Combo seleccionado:', id);
-}
 
  
 

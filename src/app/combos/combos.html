@@ -6,7 +6,7 @@
   <div
     class="combo-card"
     *ngFor="let combo of comboLista"
-    (click)="verDetalleCombo(combo.id)"
+   
   >
 
     <!-- IMAGEN PRINCIPAL -->
@@ -128,6 +128,12 @@
       <p class="precio">
         {{ combo.precio | currency:'COP' }}
       </p>
+
+     <button
+  (click)="$event.stopPropagation(); verDetalleCombo(combo.docId)"
+  class="btn-detalle">
+  Ver Detalle
+</button>
 
 
       <!-- WHATSAPP -->
